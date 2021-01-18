@@ -1,0 +1,9 @@
+<!-- ngClass allows you to dynamically set CSS classes on an HTML element -->
+<div [ngClass]="setClasses()">
+  <p>
+    <!-- (event) = ____ is event binding -->
+    <input (change)="onToggle(todo)" type="checkbox" />
+    {{ todo.title }}
+    <button (click)="onDelete(todo)" class="del">x</button>
+  </p>
+</div>

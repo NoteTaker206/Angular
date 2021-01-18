@@ -1,0 +1,25 @@
+<div>
+  <h2>Todos</h2>
+  <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+  <!-- can put ngFor on any element, not just components
+ngFor loops through each todo from the todo array in the parent component
+todos...which is what we are in, and that todo gets passed to a todo
+in the todo-item component-->
+  <!-- [property] = property/value is property binding -->
+  <!-- (childEventMethod) =  (parentEventMethod)-->
+  <app-todo-item
+    *ngFor="let todo of todos"
+    [todo]="todo"
+    (deleteToDo)="deleteTodo($event)"
+  >
+  </app-todo-item>
+  <!-- leading asterisk just means that angular is going to
+rewrite that html block using an ng template...use leading
+asterisk with structural directives like ngFor, ngIf, ngSwitchCase -->
+</div>
+
+<!-- app todo item and app add todo are sibling components -->
+
+<!-- when we declare a component in another components markup,
+the values/properties/methods to the right belong to parent and properties/events to the left
+belong to the child -->

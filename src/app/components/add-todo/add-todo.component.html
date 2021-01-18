@@ -1,0 +1,12 @@
+<!-- ngSubmit is a directive that prevents submission of form
+directing us to another page...just like in vanilla javascript when
+you use e.preventDefault() -->
+<form class="form" (ngSubmit)="onSubmit()">
+  <!-- ngModel is a directive which binds input, select, and textarea
+and stores required user value in a variable and we can use that variable whenever
+we require that value...[()] is two way binding which is frequently
+used to interact with the dom and when dom input updates....ngModel will
+capture that...basically used to capture updated values-->
+  <input type="" name="title" [(ngModel)]="title" placeholder="Add Todo..." />
+  <input type="submit" value="Submit" class="btn" />
+</form>
